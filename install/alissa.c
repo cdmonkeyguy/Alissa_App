@@ -21,7 +21,7 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 1.024   // version sub_version release patch
+#define VERSION 0.024   // version sub_version release patch
 
 int app();
 
@@ -62,7 +62,8 @@ int install_update(char *cmd)
 int auto_update()
 {
     printf("Waiting to update...\n");
-    sleep(7200);    // 2 Hours
+    // sleep(7200);    // 2 Hours
+    sleep(30);
     printf("Beginning Auto-Update Sequence.\n");
     reg_update();   // Update from master
     return 0;
