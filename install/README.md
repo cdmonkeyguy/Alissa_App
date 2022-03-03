@@ -1,8 +1,10 @@
-# Alissa's App
+# Install Files
 
-A playground for creative ideas.
+These files must remain unchanged because they are relied upon for Auto-Update.
 
-Official Version 0.02
+alissa.c is the _CURRENT VERSION_ of Alissa's App.
+
+Makefile is not required but helpful for running.
 
 ## Installing
 
