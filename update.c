@@ -56,7 +56,7 @@ int reg_update()
 
 int auto_update()
 {
-    printf("Beginning hibernation.\n");
+    printf("Waiting to update...\n");
     sleep(7200);    // 2 Hours
     printf("Beginning Auto-Update Sequence.\n");
     reg_update();   // Update from master
