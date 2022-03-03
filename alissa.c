@@ -3,7 +3,7 @@
  * @file alissa.c
  * @author Corbin Graham
  * @brief An app for Alissa!
- * @version 0.1
+ * @version 0.022
  * @date 2022-03-03
  * 
  * @copyright Copyright (c) 2022
@@ -21,6 +21,7 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
+#define VERSION 0.022   // version sub_version release patch
 
 int app();
 
@@ -31,6 +32,9 @@ int install_update(char *cmd)
     }
     if(strcmp(cmd, "app")) {
         system("rm temp.app");
+        app();
+    }
+    if(strcmp(cmd, "test")) {
         app();
     }
     return 0;
@@ -51,8 +55,8 @@ int reg_update()
 int app()
 {
     system("clear");
-    printf("Welcome to V2.\n");
-    sleep(60);
+    printf("Welcome to your very own app!  This is the %.3f version.\n", VERSION);
+    sleep(7200);
     reg_update();
     return 0;
 }
