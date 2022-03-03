@@ -4,10 +4,10 @@ A playground for creative ideas.
 
 ### Installing
 
-1. Create a folder where you want the app to be located.
-2. Right-Click or 2-Finger-Click on the folder and select `New Terminal at Folder`
+* Create a folder where you want the app to be located.
+* Right-Click or 2-Finger-Click on the folder and select `New Terminal at Folder`
 
-__Copy and Paste the following commands:__
+_Copy and Paste the following commands:_
 
 1. Clone the repo: `git clone https://github.com/cdmonkeyguy/Alissa_App.git`
 2. Change directory to installation: `cd Alissa_App/install/`
