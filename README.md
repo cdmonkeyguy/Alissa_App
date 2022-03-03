@@ -1,6 +1,6 @@
 # Alissa's App
 
-A playground for creative ideas.
+A fun playground for creative ideas.
 
 ## Installing
 
