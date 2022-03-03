@@ -2,6 +2,8 @@
 
 A fun playground for creative ideas.
 
+Official Version 0.02
+
 ## Installing
 
 * Create a folder where you want the app to be located.

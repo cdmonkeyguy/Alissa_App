@@ -21,28 +21,13 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.022   // version sub_version release patch
+#define VERSION 0.024   // version sub_version release patch
 
 int app();
 
 /*
     Auto-Update
 */
-
-int install_update(char *cmd)
-{
-    if(strcmp(cmd, "temp")) {
-        system("cp temp.app app.run && ./app.run app");
-    }
-    if(strcmp(cmd, "app")) {
-        system("rm temp.app");
-        app();
-    }
-    if(strcmp(cmd, "test")) {   // Skip update sequence
-        app();
-    }
-    return 0;
-}
 
 int reg_update()
 {
@@ -51,6 +36,26 @@ int reg_update()
     // system("if (find *.run); then echo \"Seems to be updated.\"; else touch app.run; fi");
     system("curl -o temp.c https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c && gcc temp.c -o temp.app && rm temp.c && ./temp.app temp");
     system("echo Update Complete.");
+    return 0;
+}
+
+int install_update(char *cmd)
+{
+    if(!strcmp(cmd, "start")) {   // Initial
+        reg_update();
+    }
+    else if(!strcmp(cmd, "temp")) {
+        printf("Calling Temp.\n");
+        system("cp temp.app app.run && ./app.run app");
+    }
+    else if(!strcmp(cmd, "app")) {
+        printf("Calling App.\n");
+        system("rm temp.app");
+        app();
+    }
+    else if(!strcmp(cmd, "test")) {   // Skip update sequence
+        app();
+    }
     return 0;
 }
 
@@ -72,19 +77,26 @@ int app()
     system("clear");
     printf("Welcome to your very own app!  This is the %.3f version.\n", VERSION);
 
+    // printf("Enter a command: ");
+    // char in[50];
+    // scanf("%s", in);
+    // printf("%s\n", in);
     auto_update();
     return 0;
 }
 
 int main(int argc, char *argv[])
 {
-    if(argc > 1) { install_update(argv[1]); printf("INSTALLING UPDATE!\n"); return -1; }
-    if(argc <= 1) {
-        printf("App is not ready...\n");
-        reg_update();
-    }
+    // if(!strcmp("test", "test")) printf("%d\n", strcmp("test", "test"));
+    // printf("%d\n", strcmp("test", "temp"));
+    // printf("%d\n", strcmp("test", "app"));
+    // printf("%d\n", strcmp("test", "start"));
+    // return 0;
 
-    return 0;
+    if(argc <= 1) return install_update("test");
+    if(argc > 1) return install_update(argv[1]);
+
+    return -1;
 }
 
 #endif
