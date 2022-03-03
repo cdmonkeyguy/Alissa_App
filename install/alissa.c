@@ -38,7 +38,7 @@ int install_update(char *cmd)
         system("rm temp.app");
         app();
     }
-    if(strcmp(cmd, "test")) {
+    if(strcmp(cmd, "test")) {   // Skip update sequence
         app();
     }
     return 0;
