@@ -21,9 +21,13 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.022
+#define VERSION 0.022   // version sub_version release patch
 
 int app();
+
+/*
+    Auto-Update
+*/
 
 int install_update(char *cmd)
 {
@@ -42,8 +46,6 @@ int install_update(char *cmd)
 
 int reg_update()
 {
-    // Sleep (Seconds)
-    // sleep(3600);    // 1 Hour
     system("echo \"Checking for updates.\"");
     // system("cp app.run temp.app && ./temp.app temp");
     // system("if (find *.run); then echo \"Seems to be updated.\"; else touch app.run; fi");
@@ -52,12 +54,25 @@ int reg_update()
     return 0;
 }
 
+int auto_update()
+{
+    printf("Beginning hibernation.\n");
+    sleep(7200);    // 2 Hours
+    printf("Beginning Auto-Update Sequence.\n");
+    reg_update();   // Update from master
+    return 0;
+}
+
+/*
+    ~Auto-Update
+*/
+
 int app()
 {
     system("clear");
     printf("Welcome to your very own app!  This is the %.3f version.\n", VERSION);
-    sleep(7200);
-    reg_update();
+
+    auto_update();
     return 0;
 }
 
