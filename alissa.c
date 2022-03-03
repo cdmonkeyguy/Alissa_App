@@ -51,7 +51,7 @@ int reg_update()
 int app()
 {
     system("clear");
-    printf("Welcome to V1.\n");
+    printf("Welcome to V2.\n");
     sleep(60);
     reg_update();
     return 0;
