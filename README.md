@@ -2,7 +2,7 @@
 
 A playground for creative ideas.
 
-### Installing
+## Installing
 
 * Create a folder where you want the app to be located.
 * Right-Click or 2-Finger-Click on the folder and select `New Terminal at Folder`
@@ -14,7 +14,7 @@ _Copy and Paste the following commands:_
 3. Launch the app: `make`
 4. App will auto-update once every 2 hours.
 
-#### Updating
+### Updating
 
 * Auto-Update does not require any additional steps.
 * `make clean && make` to manually update
