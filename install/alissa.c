@@ -3,7 +3,7 @@
  * @file alissa.c
  * @author Corbin Graham
  * @brief An app for Alissa!
- * @version 0.110
+ * @version 0.1 (Official)
  * @date 2022-03-03
  * 
  * @copyright Copyright (c) 2022
@@ -22,7 +22,7 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.110   // version sub_version release patch
+#define VERSION 0.112   // version sub_version release patch
 
 int app();
 

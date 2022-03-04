@@ -3,7 +3,7 @@
  * @file alissa.c
  * @author Corbin Graham
  * @brief An app for Alissa!
- * @version 0.110
+ * @version 0.1 (Official)
  * @date 2022-03-03
  * 
  * @copyright Copyright (c) 2022
