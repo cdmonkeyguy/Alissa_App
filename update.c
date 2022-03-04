@@ -120,7 +120,7 @@ int app()
     // char in[50];
     // scanf("%s", in);
     // printf("%s\n", in);
-    // auto_update();
+    auto_update();
     return 0;
 }
 
