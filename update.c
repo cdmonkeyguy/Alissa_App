@@ -76,7 +76,7 @@ int auto_update()
 int app()
 {
     system("clear");
-    printf("Welcome to your very own app!  This is the %.3f version.\n", VERSION);
+    printf("Hey cutie!  Welcome to your very own app!  This is the %.3f version.\n", VERSION);
 
     // printf("Enter a command: ");
     // char in[50];
