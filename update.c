@@ -22,7 +22,7 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.110   // version sub_version release patch
+#define VERSION 0.112   // version sub_version release patch
 
 int app();
 
