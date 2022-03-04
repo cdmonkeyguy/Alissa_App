@@ -3,7 +3,7 @@
  * @file alissa.c
  * @author Corbin Graham
  * @brief An app for Alissa!
- * @version 0.110
+ * @version 0.1 (Official)
  * @date 2022-03-03
  * 
  * @copyright Copyright (c) 2022
@@ -22,9 +22,10 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.110   // version sub_version release patch
+#define VERSION 0.113   // version sub_version release patch
 
 int app();
+int auto_update();
 
 /*
     Auto-Update
@@ -43,6 +44,7 @@ int reg_update()
 int install_update(char *cmd)
 {
     if(!strcmp(cmd, "start")) {   // Initial
+        srand(time(NULL));
         reg_update();
     }
     else if(!strcmp(cmd, "temp")) {
@@ -53,8 +55,10 @@ int install_update(char *cmd)
         printf("Calling App.\n");
         system("rm temp.app");
         app();
+        auto_update();
     }
     else if(!strcmp(cmd, "test")) {   // Skip update sequence
+        srand(time(NULL));
         app();
     }
     return 0;
@@ -115,12 +119,17 @@ int app()
     system("clear");
     printf("Hey cutie!  Welcome to your very own app!  This is the version %.3f!\n", VERSION);
 
-    display_popup(random_pickup_line());
+    for(int i = 0; i < 15; i++)
+    {
+        printf("Pickup Line %d/%d\n", i, 15);
+        display_popup(random_pickup_line());
+        sleep(30);
+    }
+    
     // printf("Enter a command: ");
     // char in[50];
     // scanf("%s", in);
     // printf("%s\n", in);
-    // auto_update();
     return 0;
 }
 
@@ -131,8 +140,6 @@ int main(int argc, char *argv[])
     // printf("%d\n", strcmp("test", "app"));
     // printf("%d\n", strcmp("test", "start"));
     // return 0;
-
-    srand(time(NULL));
 
     if(argc <= 1) return install_update("test");
     if(argc > 1) return install_update(argv[1]);
