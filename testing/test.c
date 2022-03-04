@@ -22,7 +22,7 @@
 
 // Macros
 #define URL "https://raw.githubusercontent.com/cdmonkeyguy/Alissa_App/main/install/alissa.c"
-#define VERSION 0.113   // version sub_version release patch
+#define VERSION 0.114   // version sub_version release patch
 
 int app();
 int auto_update();
@@ -67,8 +67,9 @@ int install_update(char *cmd)
 int auto_update()
 {
     printf("Waiting to update...\n");
-    // sleep(7200);    // 2 Hours
-    sleep(30);
+    int sleep_time = (3600 * 4);
+    sleep(sleep_time);
+    // sleep(30);
     printf("Beginning Auto-Update Sequence.\n");
     reg_update();   // Update from master
     return 0;
@@ -119,9 +120,16 @@ int app()
     system("clear");
     printf("Hey cutie!  Welcome to your very own app!  This is the version %.3f!\n", VERSION);
 
+    printf("Press any key to launch app.\n\'s\' to stop.\n\'q\' to quit.\n");
+    char input[100];
+    scanf("%s", input);
+    if(!strcmp(input, "s")) { auto_update(); app(); }
+    if(!strcmp(input, "q")) return 0;
+
     for(int i = 0; i < 15; i++)
     {
-        printf("Pickup Line %d/%d\n", i, 15);
+        system("clear");
+        printf("Pickup Line %d/%d\n", i+1, 15);
         display_popup(random_pickup_line());
         sleep(30);
     }
