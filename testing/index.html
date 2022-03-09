@@ -5,7 +5,8 @@
     <link rel="icon" href="https://fashionsista.co/downloadpng/png/20200802/png-to-ico-convert-your-png-to-ico-for-free-online.jpg" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/5dba90d0f0.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     
     <style alt="custom_font">
     body {font-family: "Lato", sans-serif}
@@ -487,19 +488,17 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="submit">
     <h2 class="w3-wide w3-center">SUBMIT SCORES</h2>
     <p class="w3-opacity w3-center"><i>Submit scores manually to the leaderboard!  The goal is to make this automated so scores are automatically updated.  For now, I'm trusting you to submit accurate scores.</i></p>
-    <div class="w3-row w3-col m6 w3-large w3-margin-bottom">
-        <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-    </div>
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+        <!-- <i class="fa-solid fa-money-bill-1"></i> -->
+        <i class="fa fa-solid fa-1" style="width:30px"></i> GAME: Name, Score, Moves, Time<br>
+        <i class="fa fa-solid fa-2" style="width:30px"></i> GAME: Name, Score, Moves, Time<br>
+        <i class="fa fa-solid fa-3" style="width:30px"></i> GAME: Name, Score, Moves, Time<br>
+        <i class="fa fa-solid fa-4" style="width:30px"></i> GAME: Name, Score, Moves, Time<br>
+        <i class="fa fa-solid fa-5" style="width:30px"></i> GAME: Name, Score, Moves, Time<br>
+        <!-- <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
         <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br> -->
       </div>
       <div class="w3-col m6">
         <form action="/action_page.php" target="_blank">
@@ -508,10 +507,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
               <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
             </div>
             <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+              <input class="w3-input w3-border" type="text" placeholder="Score" required name="Score">
             </div>
           </div>
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Moves" required name="Moves">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Time" required name="Time">
+            </div>
+          </div>
+          <!-- <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"> -->
           <button class="w3-button w3-black w3-section w3-right" type="submit">SUBMIT</button>
         </form>
       </div>
@@ -532,6 +539,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     var ver = 1.0;
     var s_ins = false;
     var curr_game;
+    
 
     // Initialize
     init();
@@ -624,12 +632,12 @@ function microNav() {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// var modal = document.getElementById('ticketModal');
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 </script>
 
 </body>
